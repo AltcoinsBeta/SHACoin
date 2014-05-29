@@ -3,7 +3,7 @@
 <b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b>
 
 <h1>Windows Users:</h1>
-1)Go to %appdata%\SHACoin\<br>
+1)Go to %appdata%\SHACoin<br>
 ** %appdata% = C:\Users\your-user-name\AppData\Roaming<br>
 
 2)Delete EVERYTHING in the SHACoin folder except your wallet.dat<br>
