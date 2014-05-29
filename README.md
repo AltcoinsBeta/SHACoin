@@ -2,9 +2,7 @@
 
 <b>
 *!*!*!*!BACKUP YOUR WALLET.DAT FILE FIRST!!!!!*!*!*<br>
-*!*!*!*!BACKUP YOUR WALLET.DAT FILE FIRST!!!!!*!*!*<br>
-*!*!*!*!BACKUP YOUR WALLET.DAT FILE FIRST!!!!!*!*!*<br>
-*!*!*!*!BACKUP YOUR WALLET.DAT FILE FIRST!!!!!*!*!*<br></b>
+</b>
 
 <h1>Windows Users:</h1>
 1)Go to %appdata%\SHACoin\<br>
