@@ -1,6 +1,6 @@
 <h1>SHACoin (SHA) Current version 1.0.1.0</h1>
 
-<h2>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!<h2>
+<b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b>
 
 <h1>Windows Users:</h1>
 1)Go to %appdata%\SHACoin\<br>
