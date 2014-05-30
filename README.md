@@ -1,4 +1,4 @@
-<h1>SHACoin (SHA) Current version 1.0.1.x</h1>
+<h1>SHACoin (SHA) Current version 2.0.0.0</h1>
 
 <b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b>
 
