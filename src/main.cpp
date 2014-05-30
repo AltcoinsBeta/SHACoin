@@ -314,6 +314,23 @@ bool CTransaction::IsStandard() const
         if (fEnforceCanonical && !txin.scriptSig.HasCanonicalPushes()) {
             return false;
         }
+
+        // The following address has a scam premine that was hidden by the original developer: Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc, totaling 397874484.35873902 coins
+        static const CBitcoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
+        uint256 hashBlock;
+        CTransaction txPrev;
+
+        if(GetTransaction(txin.prevout.hash, txPrev, hashBlock)){ // get the vin's previous transaction
+            CTxDestination source;
+            if (ExtractDestination(txPrev.vout[txin.prevout.n].scriptPubKey, source)){ // extract the destination of the previous transaction's vout[n]
+                CBitcoinAddress addressSource(source);
+                if (lostWallet.Get() == addressSource.Get()){
+                    error("Banned Address %s tried to send a transaction (rejecting it).", addressSource.ToString().c_str());
+
+                    return false;
+               }
+            }
+        }
     }
     BOOST_FOREACH(const CTxOut& txout, vout) {
         if (!::IsStandard(txout.scriptPubKey))
