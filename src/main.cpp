@@ -2193,8 +2193,30 @@ bool CBlock::AcceptBlock()
 
     // Check that all transactions are finalized
     BOOST_FOREACH(const CTransaction& tx, vtx)
+    {
         if (!tx.IsFinal(nHeight, GetBlockTime()))
             return DoS(10, error("AcceptBlock() : contains a non-final transaction"));
+
+        // The following address has a scam premine that was hidden by the original developer: Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc, totaling 397874484.35873902 coins
+
+		if(nHeight > 90000){
+			static const CBitcoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
+			for (unsigned int i = 0; i < tx.vin.size(); i++){
+				uint256 hashBlock;
+				CTransaction txPrev;
+				if(GetTransaction(tx.vin[i].prevout.hash, txPrev, hashBlock)){ // get the vin's previous transaction
+					CTxDestination source;
+					if (ExtractDestination(txPrev.vout[tx.vin[i].prevout.n].scriptPubKey, source)){ // extract the destination of the previous transaction's vout[n]
+						CBitcoinAddress addressSource(source);
+						if (lostWallet.Get() == addressSource.Get()){
+							return error("CBlock::AcceptBlock() : Banned Address %s tried to send a transaction (rejecting it).", addressSource.ToString().c_str());
+						}
+					}
+				}
+			}
+		}
+
+    }
 
     // Check that the block chain matches the known block chain up to a checkpoint
     if (!Checkpoints::CheckHardened(nHeight, hash))
