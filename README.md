@@ -15,7 +15,7 @@
 <h1>Linux Users (GUI)</h1>
 (Delete everything in your .SHACoin folder except wallet.dat and move the new SHACoin.conf file there as well)
 
-1)git clone https://github.com/AltcoinsBeta/SHACoin.git<br>
+1)git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
 
 2)cd SHACoin<br>
 
@@ -28,7 +28,7 @@
 <h1>Linux Users (SHACoind only)</h1>
 (Delete everything in your .SHACoin folder except wallet.dat and move the new SHACoin.conf file there as well)
 
-1) git clone https://github.com/AltcoinsBeta/SHACoin.git<br>
+1) git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
 
 2) cd SHACoin/src<br>
 
