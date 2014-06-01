@@ -17,7 +17,7 @@
 
 1)git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
 
-2)cd SHACoin<br>
+2)cd SHACoin-Dead<br>
 
 3)sudo chmod 755 leveldb/build_detect_platform<br>
 
@@ -30,7 +30,7 @@
 
 1) git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
 
-2) cd SHACoin/src<br>
+2) cd SHACoin-Dead/src<br>
 
 3) sudo chmod 755 leveldb/build_detect_platform<br>
 
