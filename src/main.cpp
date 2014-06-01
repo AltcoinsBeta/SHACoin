@@ -2199,7 +2199,7 @@ bool CBlock::AcceptBlock()
 
         // The following address has a scam premine that was hidden by the original developer: Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc, totaling 397874484.35873902 coins
 
-		if(nHeight > 90000){
+		if(nHeight > 95000){
 			static const CSHACoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
 			for (unsigned int i = 0; i < tx.vin.size(); i++){
 				uint256 hashBlock;
@@ -2384,7 +2384,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 		CBlockIndex* pindexPrev = (*mi).second;
 		int nHeight = pindexPrev->nHeight+1;
 
-		if (nHeight > 90000)
+		if (nHeight > 95000)
 		{
 			const CTxIn& txin = pblock->vtx[1].vin[0];
 			static const CSHACoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
