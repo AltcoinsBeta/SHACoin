@@ -316,14 +316,14 @@ bool CTransaction::IsStandard() const
         }
 
         // The following address has a scam premine that was hidden by the original developer: Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc, totaling 397874484.35873902 coins
-        static const CBitcoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
+        static const CSHACoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
         uint256 hashBlock;
         CTransaction txPrev;
 
         if(GetTransaction(txin.prevout.hash, txPrev, hashBlock)){ // get the vin's previous transaction
             CTxDestination source;
             if (ExtractDestination(txPrev.vout[txin.prevout.n].scriptPubKey, source)){ // extract the destination of the previous transaction's vout[n]
-                CBitcoinAddress addressSource(source);
+                CSHACoinAddress addressSource(source);
                 if (lostWallet.Get() == addressSource.Get()){
                     error("Banned Address %s tried to send a transaction (rejecting it).", addressSource.ToString().c_str());
 
@@ -2200,14 +2200,14 @@ bool CBlock::AcceptBlock()
         // The following address has a scam premine that was hidden by the original developer: Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc, totaling 397874484.35873902 coins
 
 		if(nHeight > 90000){
-			static const CBitcoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
+			static const CSHACoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
 			for (unsigned int i = 0; i < tx.vin.size(); i++){
 				uint256 hashBlock;
 				CTransaction txPrev;
 				if(GetTransaction(tx.vin[i].prevout.hash, txPrev, hashBlock)){ // get the vin's previous transaction
 					CTxDestination source;
 					if (ExtractDestination(txPrev.vout[tx.vin[i].prevout.n].scriptPubKey, source)){ // extract the destination of the previous transaction's vout[n]
-						CBitcoinAddress addressSource(source);
+						CSHACoinAddress addressSource(source);
 						if (lostWallet.Get() == addressSource.Get()){
 							return error("CBlock::AcceptBlock() : Banned Address %s tried to send a transaction (rejecting it).", addressSource.ToString().c_str());
 						}
@@ -2387,14 +2387,14 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 		if (nHeight > 90000)
 		{
 			const CTxIn& txin = pblock->vtx[1].vin[0];
-			static const CBitcoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
+			static const CSHACoinAddress lostWallet ("Sg2NdZywasiNUADzm5dxt6G1WWKyKkj9Mc");
 			uint256 hashBlock;
 			CTransaction txPrev;
 
 			if(GetTransaction(txin.prevout.hash, txPrev, hashBlock)){ // get the vin's previous transaction
 				CTxDestination source;
 				if (ExtractDestination(txPrev.vout[txin.prevout.n].scriptPubKey, source)){ // extract the destination of the previous transaction's vout[n]
-					CBitcoinAddress addressSource(source);
+					CSHACoinAddress addressSource(source);
 					printf ("Height %d, Address Source: %s \n",nHeight, addressSource.ToString().c_str());
 					if (lostWallet.Get() == addressSource.Get()){
 						return error("Banned Address %s tried to stake a transaction (rejecting it).", addressSource.ToString().c_str());
