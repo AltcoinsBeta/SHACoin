@@ -153,6 +153,7 @@ class CNode
 {
 public:
     // socket
+    int nRecvVersion;
     uint64_t nServices;
     SOCKET hSocket;
     CDataStream vSend;
