@@ -19,9 +19,7 @@
 
 2)cd SHACoin-Dead<br>
 
-3)sudo chmod 755 leveldb/build_detect_platform<br>
-
-4)sudo qmake SHACoin-qt.pro<br>
+3)sudo qmake SHACoin-qt.pro<br>
 
 4)sudo make<br>
 
@@ -32,6 +30,4 @@
 
 2) cd SHACoin-Dead/src<br>
 
-3) sudo chmod 755 leveldb/build_detect_platform<br>
-
-4) make -f makefile.unix<br>
+3) make -f makefile.unix<br>
