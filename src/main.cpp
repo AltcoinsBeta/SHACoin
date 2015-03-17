@@ -1011,14 +1011,8 @@ const int YEARLY_BLOCKCOUNT = 525600;	// 365 * 1440
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 {
 	int64_t nRewardCoinYear;
-	nRewardCoinYear = COIN_YEAR_REWARD;
-
-	if(nHeight < YEARLY_BLOCKCOUNT)
-		nRewardCoinYear = 2.5 * COIN_YEAR_REWARD;
-	else if(nHeight < (2 * YEARLY_BLOCKCOUNT))
-		nRewardCoinYear = 1.5 * COIN_YEAR_REWARD;
-	else if(nHeight > (9 * YEARLY_BLOCKCOUNT))
-		nRewardCoinYear = COIN_YEAR_REWARD / 10;
+	
+	nRewardCoinYear = 0.5 * COIN_YEAR_REWARD;
 
     int64_t nSubsidy = nCoinAge * nRewardCoinYear / 365;
 
