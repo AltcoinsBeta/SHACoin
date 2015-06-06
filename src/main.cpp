@@ -1007,12 +1007,14 @@ int64_t GetProofOfWorkReward(int64_t nFees, int nHeight)
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-const int YEARLY_BLOCKCOUNT = 525600;	// 365 * 1440
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 {
 	int64_t nRewardCoinYear;
 	
-	nRewardCoinYear = 0.5 * COIN_YEAR_REWARD;
+	if(nHeight <= 525599) 
+		nRewardCoinYear = 2.5 * COIN_YEAR_REWARD; 
+	else if(nHeight > 525599) 
+		nRewardCoinYear = 0.5 * COIN_YEAR_REWARD;
 
     int64_t nSubsidy = nCoinAge * nRewardCoinYear / 365;
 
