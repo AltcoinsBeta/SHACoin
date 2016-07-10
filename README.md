@@ -1,4 +1,4 @@
-<h1>SHACoin (SHA) Current version 2.0.0.0</h1>
+<h1>SHACoin (SHA) Current version 2.0.0.1</h1>
 
 <b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b>
 
@@ -9,8 +9,6 @@
 2)Delete EVERYTHING in the SHACoin folder except your wallet.dat<br>
 
 3)Start the SHACoin Wallet.<br>
-
-4)Cross fingers.<br>
 
 <h1>Linux Users (GUI)</h1>
 (Delete everything in your .SHACoin folder except wallet.dat and move the new SHACoin.conf file there as well)
