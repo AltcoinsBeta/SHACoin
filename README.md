@@ -1,6 +1,6 @@
 <h1>SHACoin (SHA) Current version 2.0.0.1</h1>
 
-<b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b>
+<b>BACKUP YOUR WALLET.DAT FILE FIRST!!!!!</b><br>
 (Delete everything in your SHACoin folder except wallet.dat and move the new SHACoin.conf file there as well)
 
 <h1>Windows Users:</h1>
