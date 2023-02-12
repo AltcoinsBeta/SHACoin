@@ -12,14 +12,14 @@
 
 <h1>Linux Users (GUI)</h1>
 
-1) git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
-2) cd SHACoin-Dead<br>
+1) git clone https://github.com/AltcoinsBeta/SHACoin.git<br>
+2) cd SHACoin<br>
 3) sudo qmake SHACoin-qt.pro<br>
 4) sudo make<br>
 
 <h1>Linux Users (SHACoind only)</h1>
 
-1) git clone https://github.com/AltcoinsBeta/SHACoin-Dead.git<br>
-2) cd SHACoin-Dead/src<br>
+1) git clone https://github.com/AltcoinsBeta/SHACoin.git<br>
+2) cd SHACoin/src<br>
 3) make -f makefile.unix<br>
 
